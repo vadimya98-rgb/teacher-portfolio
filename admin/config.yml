@@ -1,0 +1,91 @@
+backend:
+  name: github
+  repo: vadimya98-rgb/teacher-portfolio
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "about"
+    label: "Обо мне"
+    files:
+      - name: "about"
+        label: "Информация"
+        file: "content/about.json"
+        fields:
+          - { name: name, label: "ФИО", widget: "string" }
+          - { name: school, label: "Место работы", widget: "string" }
+          - { name: education, label: "Образование", widget: "text" }
+          - { name: qualification, label: "Квалификация", widget: "string" }
+          - { name: experience, label: "Стаж (лет)", widget: "number" }
+          - { name: bio, label: "Краткая биография", widget: "text" }
+
+  - name: "achievements"
+    label: "Достижения учителя"
+    files:
+      - name: "achievements"
+        label: "Список достижений"
+        file: "content/achievements.json"
+        fields:
+          - name: "list"
+            label: "Достижения"
+            widget: "list"
+            fields:
+              - { name: title, label: "Название", widget: "string" }
+              - { name: year, label: "Год", widget: "number" }
+              - { name: desc, label: "Описание", widget: "text" }
+
+  - name: "methods"
+    label: "Методическая копилка"
+    files:
+      - name: "methods"
+        label: "Методические материалы"
+        file: "content/methods.json"
+        fields:
+          - name: "list"
+            label: "Материалы"
+            widget: "list"
+            fields:
+              - { name: title, label: "Название", widget: "string" }
+              - { name: desc, label: "Описание", widget: "text" }
+              - { name: file, label: "Файл (PDF, DOC)", widget: "file" }
+
+  - name: "students"
+    label: "Достижения учеников"
+    files:
+      - name: "students"
+        label: "Список"
+        file: "content/students.json"
+        fields:
+          - name: "list"
+            label: "Ученики"
+            widget: "list"
+            fields:
+              - { name: name, label: "Имя", widget: "string" }
+              - { name: achievement, label: "Достижение", widget: "text" }
+
+  - name: "gallery"
+    label: "Фотогалерея"
+    files:
+      - name: "gallery"
+        label: "Фотографии"
+        file: "content/gallery.json"
+        fields:
+          - name: "list"
+            label: "Список фото"
+            widget: "list"
+            fields:
+              - { name: url, label: "Изображение", widget: "image" }
+              - { name: caption, label: "Подпись", widget: "string" }
+
+  - name: "contacts"
+    label: "Контакты"
+    files:
+      - name: "contacts"
+        label: "Контактные данные"
+        file: "content/contacts.json"
+        fields:
+          - { name: email, label: "Email", widget: "string" }
+          - { name: phone, label: "Телефон", widget: "string" }
+          - { name: address, label: "Адрес", widget: "string" }
