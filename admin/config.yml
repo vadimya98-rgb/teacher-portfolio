@@ -1,7 +1,5 @@
 backend:
-  name: github
-  repo: vadimya98-rgb/teacher-portfolio
-  branch: main
+  name: git-gateway
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
